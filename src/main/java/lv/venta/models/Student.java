@@ -46,7 +46,7 @@ public class Student {
 	@ToString.Exclude
 	private Collection<Grade> grades;
 
-	public Student(long ids, String name, String surname) {
+	public Student(String name, String surname) {
 		this.name = name;
 		this.surname = surname;
 	}
