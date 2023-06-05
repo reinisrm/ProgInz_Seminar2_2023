@@ -51,7 +51,15 @@ public class Course {
 	
 	@OneToMany(mappedBy = "course")
 	private Collection<Grade> grades;
+
+	public Course(@NotNull @Size(min = 3, max = 15) String title, @Min(1) @Max(20) int creditPoints,
+			Professor professor) {
+		Title = title;
+		this.creditPoints = creditPoints;
+		this.professor = professor;
+	}
 	
 	//TODO izveidot argumentu konstruktoru
+	
 
 }
