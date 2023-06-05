@@ -45,7 +45,7 @@ public class Professor {
 	@Column(name = "surname")
 	private String surname;
 	
-	@NotBlank
+	@NotNull
 	@Column(name = "degree")
 	private Degree degree;
 	
