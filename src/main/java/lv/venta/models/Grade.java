@@ -42,7 +42,14 @@ public class Grade {
 	@ManyToOne
 	@JoinColumn(name = "idc")
 	private Course course;
+
+	public Grade(@Min(0) @Max(10) int gradeValue, Student student, Course course) {
+		this.gradeValue = gradeValue;
+		this.student = student;
+		this.course = course;
+	}
 	
 	//TODO izveidot argumenta konstruktoru
+	
 
 }

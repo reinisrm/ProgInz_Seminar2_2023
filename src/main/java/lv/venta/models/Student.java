@@ -43,6 +43,7 @@ public class Student {
 	public String surname;
 	
 	@OneToMany(mappedBy = "student")
+	@ToString.Exclude
 	private Collection<Grade> grades;
 
 	public Student(long ids, String name, String surname) {

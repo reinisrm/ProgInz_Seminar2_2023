@@ -50,6 +50,7 @@ public class Course {
 	private Professor professor;
 	
 	@OneToMany(mappedBy = "course")
+	@ToString.Exclude
 	private Collection<Grade> grades;
 
 	public Course(@NotNull @Size(min = 3, max = 15) String title, @Min(1) @Max(20) int creditPoints,
