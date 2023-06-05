@@ -63,7 +63,7 @@ public class Course {
 			Professor professor) {
 		Title = title;
 		this.creditPoints = creditPoints;
-		this.professor = professor;
+		//this.professor = professor;
 	}
 	
 	//TODO izveidot argumentu konstruktoru
