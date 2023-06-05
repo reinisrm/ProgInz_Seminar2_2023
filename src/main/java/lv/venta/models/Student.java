@@ -1,10 +1,13 @@
 package lv.venta.models;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -38,6 +41,9 @@ public class Student {
 	@Size(min = 3, max = 15)
 	@Column(name = "surname")
 	public String surname;
+	
+	@OneToMany(mappedBy = "student")
+	private Collection<Grade> grades;
 
 	public Student(long ids, String name, String surname) {
 		this.name = name;
