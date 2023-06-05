@@ -1,5 +1,6 @@
 package lv.venta.models;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import jakarta.persistence.Column;
@@ -8,6 +9,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -45,9 +49,11 @@ public class Course {
 	@Column(name = "CreditPoints")
 	private int creditPoints;
 	
-	@OneToOne
-	@JoinColumn(name = "idp") //sasaistam ar otras klases primary key
-	private Professor professor;
+	@ManyToMany
+	@JoinTable(name = "course_prof_table",
+	joinColumns = @JoinColumn(name="idp"),
+	inverseJoinColumns = @JoinColumn(name="idc"))
+	private Collection<Professor> professors = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "course")
 	@ToString.Exclude

@@ -1,10 +1,14 @@
 package lv.venta.models;
 
+import java.util.ArrayList;
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -16,7 +20,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
+import java.util.Collection;
 @Table(name = "professor_table")
 @Entity
 @Getter
@@ -49,9 +53,8 @@ public class Professor {
 	@Column(name = "degree")
 	private Degree degree;
 	
-	@OneToOne(mappedBy = "professor") //sasaistam ar otras klases mainigo
-	@ToString.Exclude
-	private Course course;
+	@ManyToMany(mappedBy= "professors")
+	private Collection<Course> courses = new ArrayList<Course>();
 
 	public Professor(String name, String surname, Degree degree) {
 		this.name = name;
