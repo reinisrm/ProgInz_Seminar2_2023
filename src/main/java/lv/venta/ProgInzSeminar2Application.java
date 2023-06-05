@@ -52,6 +52,9 @@ public class ProgInzSeminar2Application {
 				grRepo.save(new Grade(8, st2, c1)); //Baiba nopelnija 8 Java
 				grRepo.save(new Grade(10, st2, c2)); //Baiba nopelnija 10 DB
 				
+				//TODO izveidot jaunu zaru un pariet uz to (git branch xxx, git checkout xxx)
+				//TODO parveidot saiti starp profesoru un kursu uz manytomany
+				//TODO pamainit testModel funkciju, ielikot 1. prof divus kursus un 1. kursam, ka to pasniedz abi profesori
 				
 				
 			}
