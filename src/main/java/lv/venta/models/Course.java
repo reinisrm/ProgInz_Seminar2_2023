@@ -51,7 +51,7 @@ public class Course {
 	
 	@ManyToMany
 	@JoinTable(name = "course_prof_table",
-	joinColumns = @JoinColumn(name="idp"),
+	joinColumns = @JoinColumn(name="idpe"),
 	inverseJoinColumns = @JoinColumn(name="idc"))
 	private Collection<Professor> professors = new ArrayList<>();
 	

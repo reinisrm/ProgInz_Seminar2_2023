@@ -36,4 +36,12 @@ public class Person {
 	@Size(min = 3, max = 15)
 	@Column(name = "surname")
 	public String surname;
+
+	public Person(@NotNull @Size(min = 3, max = 15) String name, @NotNull @Size(min = 3, max = 15) String surname) {
+		this.name = name;
+		this.surname = surname;
+	}
+	
+	
+	
 }

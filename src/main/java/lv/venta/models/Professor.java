@@ -28,27 +28,13 @@ import java.util.Collection;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Professor {
+public class Professor extends Person {
 	//TODO uzlikt datagpa anotacijas
 	//TODO uzlikt atbilstosas validaciju anotacijas
 	//TODO izveidot Student klasi
 	//TODO izveidot Course klasi
 	//TODO izveidot Grade klasi
-	@Setter(value = AccessLevel.NONE)
-	@Column(name = "idp")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idp;
-	
-	@Column(name = "name")
-	@NotNull
-	@Size(min = 3, max = 15)
-	private String name;
-	
-	@NotNull
-	@Size(min = 3, max = 15)
-	@Column(name = "surname")
-	private String surname;
+
 	
 	@NotNull
 	@Column(name = "degree")
@@ -59,8 +45,7 @@ public class Professor {
 	private Collection<Course> courses = new ArrayList<Course>();
 
 	public Professor(String name, String surname, Degree degree) {
-		this.name = name;
-		this.surname = surname;
+		super(name, surname);
 		this.degree = degree;
 	}
 	
