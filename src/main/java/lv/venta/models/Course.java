@@ -66,7 +66,11 @@ public class Course {
 		//this.professor = professor;
 	}
 	
-	//TODO izveidot argumentu konstruktoru
+	public void addProfessor(Professor inputProfessor) {
+		if(!professors.contains(inputProfessor)) {
+			professors.add(inputProfessor);
+		}
+	}
 	
 
 }

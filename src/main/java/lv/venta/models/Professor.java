@@ -62,6 +62,14 @@ public class Professor {
 		this.degree = degree;
 	}
 	
+	public void addCourse(Course inputCourse) {
+		if(!courses.contains(inputCourse)) {
+			courses.add(inputCourse);
+		}
+	}
+	
+	
+	
 	
 	
 }
