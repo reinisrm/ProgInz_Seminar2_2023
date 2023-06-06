@@ -68,6 +68,8 @@ public class Professor {
 		}
 	}
 	
+	//TODO izveidot kursa izdzesanas funkciju
+	
 	
 	
 	

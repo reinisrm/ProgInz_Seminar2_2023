@@ -60,10 +60,10 @@ public class Course {
 	private Collection<Grade> grades;
 
 	public Course(@NotNull @Size(min = 3, max = 15) String title, @Min(1) @Max(20) int creditPoints,
-			Professor professor) {
+			ArrayList<Professor> professors) {
 		Title = title;
 		this.creditPoints = creditPoints;
-		//this.professor = professor;
+		this.professors = professors;
 	}
 	
 	public void addProfessor(Professor inputProfessor) {
@@ -71,6 +71,8 @@ public class Course {
 			professors.add(inputProfessor);
 		}
 	}
+	
+	//TODO izveidot profesora izdzesanas funkciju
 	
 
 }
